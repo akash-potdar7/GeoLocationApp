@@ -1,0 +1,79 @@
+<div layout-fill>
+
+  <md-content>
+    <header>
+      <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    </header>
+  </md-content>
+
+
+
+
+    <section layout="column" flex layout-align="center center" class="login">
+
+        <md-card class="md-whiteframe-4dp" style="width: 400px;margin-top: 100px;">
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Login">
+          <!--  <md-toolbar>
+                <div layout="column" layout-padding layout-align="center center">
+                    <div>
+                        <md-icon class="logo">home</md-icon>
+                    </div>
+                    <div class="md-headline md-padding">Login</div>
+                </div>
+            </md-toolbar> -->
+            <md-card-content>
+                <form name="login">
+                    <md-input-container class="md-block">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" ng-model="vm.email" required />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" ng-model="vm.password" required />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <div layout="row" layout-align="center center">
+                            <md-button class="md-raised md-primary" flex="50">Login</md-button>
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+      </md-tab>
+      <md-tab label="Signup">
+         <md-card-content>
+                <form name="login">
+                    <md-input-container class="md-block">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" ng-model="vm.email" required />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="password">First Name</label>
+                        <input type="password" name="firstName" ng-model="vm.firstName" required />
+                    </md-input-container>
+                     <md-input-container class="md-block">
+                        <label for="password">Last Name</label>
+                        <input type="password" name="lastName" ng-model="vm.lastName" required />
+                    </md-input-container>
+                     <md-input-container class="md-block">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" ng-model="vm.password" required />
+                    </md-input-container>
+                    
+                    <md-input-container class="md-block">
+                        <div layout="row" layout-align="center center">
+                            <md-button class="md-raised md-primary" flex="50">Signup</md-button>
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+      </md-tab>
+     
+    </md-tabs>
+  </md-content>
+</md-card>
+</section>
+
+
+</div>
