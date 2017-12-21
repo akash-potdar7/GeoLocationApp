@@ -1,4 +1,4 @@
-<div layout-fill>
+<div layout-fill ng-controller="MainController as vm">
 
   <md-content>
     <header>
@@ -24,18 +24,33 @@
                 </div>
             </md-toolbar> -->
             <md-card-content>
-                <form name="login">
+                <form name="loginForm">
                     <md-input-container class="md-block">
                         <label for="email">Email</label>
-                        <input type="email" name="email" ng-model="vm.email" required />
+                        <input type="email" name="email" ng-model="vm.user.email" ng-pattern="/^.+@.+\..+$/"  required/>
+                <div ng-messages="loginForm.email.$error">
+                  <div ng-message="required">This is required.</div>
+                  <div ng-message="pattern">Invalid email.</div>
+                </div>
+
                     </md-input-container>
                     <md-input-container class="md-block">
                         <label for="password">Password</label>
-                        <input type="password" name="password" ng-model="vm.password" required />
+                        <input type="password" name="password" ng-model="vm.user.password" ng-minlength="3" ng-maxlength="10" required />
+                  <div  ng-messages="loginForm.password.$error">
+                      <div ng-message="required">This is required.</div>
+                      <span class="error" ng-show="loginForm.password.$error.minlength">
+                        Too short!</span>
+                      <span class="error" ng-show="loginForm.password.$error.maxlength">
+                        Too long!</span>
+                   </div>
+
                     </md-input-container>
                     <md-input-container class="md-block">
                         <div layout="row" layout-align="center center">
-                            <md-button class="md-raised md-primary" flex="50">Login</md-button>
+                            <md-button type="submit" class="md-raised md-primary" flex="50" ng-click="vm.login()" >Login</md-button>
+                         
+
                         </div>
                     </md-input-container>
                 </form>
